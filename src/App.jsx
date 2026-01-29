@@ -16,6 +16,15 @@ import {
 } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
+
+import cert1 from "./assets/26acd102-1b23-49a0-9c08-7b888c717c74.png";
+import cert2 from "./assets/Ahmed Hassan Ahmed_ReactJS Foundations Course_page-0001.jpg";
+import cert3 from "./assets/Ahmed Hassan Ahmed_SQL Server Foundations Course (1)_page-0001.jpg";
+import cert4 from "./assets/Linux_Unhatched_certificate_ahmedhassan8754321-gmail-com_2d05e6fc-9f10-46ce-89d8-1b6d8f10cc57_page-0001.jpg";
+import cert5 from "./assets/AI for Beginners_page-0001.jpg";
+import cert6 from "./assets/9757613_9629635_1769307917351_page-0001.jpg";
+import profile from "/src/assets/photo_2026-01-29_03-56-00.jpg";
+
 const STARS = Array.from({ length: 80 }, () => ({
   left: `${Math.random() * 100}%`,
   top: `${Math.random() * 100}%`,
@@ -113,16 +122,16 @@ function Layout({ children }) {
         </h1>
 
         <div className="flex gap-6">
-          <NavLink to="/" className={navLinkClass} end>
+          <NavLink to="/My-portfolio/" className={navLinkClass} end>
             Home
           </NavLink>
-          <NavLink to="/skills" className={navLinkClass}>
+          <NavLink to="/My-portfolio/skills" className={navLinkClass}>
             Skills
           </NavLink>
-          <NavLink to="/projects" className={navLinkClass}>
+          <NavLink to="/My-portfolio/projects" className={navLinkClass}>
             Projects
           </NavLink>
-          <NavLink to="/contact" className={navLinkClass}>
+          <NavLink to="/My-portfolio/contact" className={navLinkClass}>
             Contact
           </NavLink>
         </div>
@@ -163,7 +172,7 @@ function Home() {
       >
         {/* CENTER IMAGE – HOME ONLY */}
         <motion.img
-          src="/src/assets/photo_2026-01-29_03-56-00.jpg"
+          src={profile}
           alt="profile"
           className="h-60 mb-12 rounded-full border border-white/30 shadow-xl"
           animate={{
@@ -216,11 +225,11 @@ function Projects() {
           ].map((p, index) => (
             <TiltCard key={p}>
               {" "}
-              <a href={p}> {index<=1 ? (index===1? "project 2": "project 1") : p}</a>
+              <a href={p}> {index<=2 ? (index===1? "project 2" :index===2? "project 3":  "project 1") : p}</a>
             </TiltCard>
           ))}
           <div className="text-center col-span-full mt-12">
-            <Link to="/skills">
+            <Link to="/My-portfolio/skills">
               <MagneticButton>My Skills →</MagneticButton>
             </Link>
           </div>
@@ -238,14 +247,14 @@ function Skills() {
     return () => (document.body.style.overflow = "auto");
   }, [selected]);
 
-  const certificates = [
-    "/src/assets/26acd102-1b23-49a0-9c08-7b888c717c74.png",
-    "/src/assets/Ahmed Hassan Ahmed_ReactJS Foundations Course_page-0001.jpg",
-    "/src/assets/Ahmed Hassan Ahmed_SQL Server Foundations Course (1)_page-0001.jpg",
-    "/src/assets/Linux_Unhatched_certificate_ahmedhassan8754321-gmail-com_2d05e6fc-9f10-46ce-89d8-1b6d8f10cc57_page-0001.jpg",
-    "/src/assets/AI for Beginners_page-0001.jpg",
-    "/src/assets/9757613_9629635_1769307917351_page-0001.jpg",
-  ];
+const certificates = [
+  cert1,
+  cert2,
+  cert3,
+  cert4,
+  cert5,
+  cert6,
+];
 
   return (
     <Page>
@@ -372,13 +381,13 @@ function AnimatedRoutes({ setModalOpen }) {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
+        <Route path="/My-portfolio/" element={<Home />} />
         <Route
-          path="/skills"
+          path="/My-portfolio/skills"
           element={<Skills setModalOpen={setModalOpen} />}
         />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/My-portfolio/projects" element={<Projects />} />
+        <Route path="/My-portfolio/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
@@ -388,7 +397,7 @@ function AnimatedRoutes({ setModalOpen }) {
 function ScrollNavigator({ disabled }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const pages = ["/", "/skills", "/projects", "/contact"];
+  const pages = ["/My-portfolio/", "/My-portfolio/skills", "/My-portfolio/projects", "/My-portfolio/contact", "/My-portfolio/"];
   const currentIndex = pages.indexOf(location.pathname);
   const locked = useRef(false);
 
