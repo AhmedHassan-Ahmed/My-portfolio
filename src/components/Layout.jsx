@@ -29,16 +29,16 @@ export default function Layout({ children }) {
         </h1>
 
         <div className="flex gap-6">
-          <NavLink to="/My-portfolio/" className={navLinkClass} end>
+          <NavLink to="/" className={navLinkClass} end>
             Home
           </NavLink>
-          <NavLink to="/My-portfolio/skills" className={navLinkClass}>
+          <NavLink to="/skills" className={navLinkClass}>
             Skills
           </NavLink>
-          <NavLink to="/My-portfolio/projects" className={navLinkClass}>
+          <NavLink to="/projects" className={navLinkClass}>
             Projects
           </NavLink>
-          <NavLink to="/My-portfolio/contact" className={navLinkClass}>
+          <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
         </div>

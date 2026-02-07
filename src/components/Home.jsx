@@ -59,7 +59,7 @@ export default function Home() {
         </motion.p>
 
         <div className="mt-12">
-          <Link to="/My-portfolio/projects">
+          <Link to="/projects">
             <MagneticButton>View Projects ↓</MagneticButton>
           </Link>
         </div>

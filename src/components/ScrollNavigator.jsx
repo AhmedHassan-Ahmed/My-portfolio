@@ -6,11 +6,11 @@ export default function ScrollNavigator({ disabled }) {
   const navigate = useNavigate();
   const location = useLocation();
   const pages = [
-    "/My-portfolio/",
-    "/My-portfolio/skills",
-    "/My-portfolio/projects",
-    "/My-portfolio/contact",
-    "/My-portfolio/",
+    "/",
+    "/skills",
+    "/projects",
+    "/contact",
+    "/",
   ];
   const currentIndex = pages.indexOf(location.pathname);
   const locked = useRef(false);
@@ -37,7 +37,7 @@ export default function ScrollNavigator({ disabled }) {
       }
     };
 
-    window.addEventListener("wheel", onWheel, { passive: false }); // 👈 IMPORTANT
+    window.addEventListener("wheel", onWheel, { passive: false }); 
     return () => window.removeEventListener("wheel", onWheel);
   }, [currentIndex, navigate, disabled]);
 

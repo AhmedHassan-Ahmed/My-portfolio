@@ -12,7 +12,7 @@ export default function Projects() {
           {[
             "https://ahmedhassan-ahmed.github.io/Responsive-Landing-Page/",
             "https://ahmedhassan-ahmed.github.io/hospital-project/hospital%20project/homepage/index.html",
-            "https://ahmedhassan-ahmed.github.io/React-Tasks-Project/",
+            "https://sungo.vercel.app/",
             "coming soon",
           ].map((p, index) => (
             <TiltCard key={p}>
@@ -21,16 +21,16 @@ export default function Projects() {
                 {" "}
                 {index <= 2
                   ? index === 1
-                    ? "project 2"
+                    ? "Hospital Website"
                     : index === 2
-                      ? "project 3"
-                      : "project 1"
+                      ? "React Website"
+                      : "landing page"
                   : p}
               </a>
             </TiltCard>
           ))}
           <div className="text-center col-span-full mt-12">
-            <Link to="/My-portfolio/skills">
+            <Link to="/skills">
               <MagneticButton>My Skills →</MagneticButton>
             </Link>
           </div>
