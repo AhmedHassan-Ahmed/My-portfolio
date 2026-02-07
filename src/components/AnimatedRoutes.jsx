@@ -16,13 +16,13 @@ export default function AnimatedRoutes({ setModalOpen }) {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/My-portfolio/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route
-          path="/My-portfolio/skills"
+          path="/skills"
           element={<Skills setModalOpen={setModalOpen} />}
         />
-        <Route path="/My-portfolio/projects" element={<Projects />} />
-        <Route path="/My-portfolio/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
